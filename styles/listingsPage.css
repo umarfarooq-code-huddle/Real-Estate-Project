@@ -1,0 +1,224 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media only screen and (min-width:800px){
+    .card {
+        box-shadow: 1px 5px 8px 5px rgba(0, 0, 0, 0.3);
+        width: 23.8%;
+        text-align: center;
+        margin: 10px;
+        border-radius: 8px;
+        display: inline-block;
+        height: 25.5rem;
+    }
+}
+
+@media only screen and (max-width:800px){
+    .card {
+        box-shadow: 1px 5px 8px 5px rgba(0, 0, 0, 0.3);
+        width: 48%;
+        text-align: center;
+        margin: 10px;
+        border-radius: 8px;
+        display: inline-block;
+        height: 25.5rem;
+    }
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: 1s;
+    box-shadow: 1px 5px 8px 5px rgba(127, 204, 198, 0.3);
+
+}
+
+.card img{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    height: 200px;
+
+}
+
+.short-details{
+    padding: 10px;
+}
+
+
+.txt-name{
+    width: 100%;
+    text-align: left;
+    font-size: 1.3rem;
+
+}
+
+.txt-price{
+    width: 40%;
+    text-align: left;
+    padding-top: 3px;
+    color: rgb(52, 152, 182);
+    font-size: 1rem;
+}
+
+.txt-location{
+    width: 100%;
+    text-align: left;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.txt-city{
+    width: 50%;
+    text-align: left;
+    font-size: 0.8rem;
+    color: gray;
+    float: left;
+    display: inline;
+}
+
+
+.txt-days{
+
+    text-align: right;
+    font-size: 0.8rem;
+    color: gray;
+    float: right;
+
+}
+
+.txt-specs{
+    text-align: left;
+    padding-top: 10px;
+    color: gray;
+    font-size: 0.8rem;
+}
+
+hr{
+    padding: 0px;
+}
+
+.fa-circle{
+    color: aqua;
+ 
+}
+
+.header{
+    height: 25rem;
+    text-align: center;
+}
+
+
+
+
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+
+    color: black;
+    border-bottom: 1px solid skyblue;
+  }
+
+ 
+  /* Add a color to the active/current link */
+  .topnav a.active {
+
+    color: blue;
+    border-bottom: 1px solid blue;
+  }
+
+    /* Style the links inside the navigation bar */
+    .topnav .name {
+        float: left;
+        color: #000000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+.header .info {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.header .info p{
+    text-align: center;
+    line-height: 25px;
+    color: gray;
+}
+
+
+.header .info select{
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid gray;
+    background: white;
+}
+
+.header .info .apply{
+    margin: 5px;
+    padding: 10px;
+    width: 8rem;
+    background-color: #29aae3;
+    border: 1px solid #29aae3;
+    color: white;
+    text-align: center;
+}
+
+
+.header .info .apply:hover{
+    margin: 5px;
+    padding: 10px;
+    width: 8rem;
+    background-color: white;
+    border: 1px solid #29aae3;
+    color: #29aae3;
+    text-align: center;
+    transition: 1s;
+}
+
+.header .info .clear{
+    margin: 5px;
+    padding: 10px;
+    width: 8rem;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+}
+
+
+.header .info .clear:hover{
+    margin: 5px;
+    padding: 10px;
+    width: 8rem;
+    background-color: black;
+    border: 1px solid black;
+    color:white;
+    text-align: center;
+    transition: 1s;
+}
+
+.header .info .location{
+    margin: 5px;
+    padding: 10px;
+    width: 8rem;
+    background-color: white;
+    border: 1px solid gray;
+    color: black;
+    text-align: center;
+
+}
+
+
