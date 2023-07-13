@@ -17,6 +17,8 @@
       src="https://kit.fontawesome.com/6a4d4b7faa.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="scripts/detailsScripts.js"></script>
   </head>
   <body>
     <div class="header">
@@ -29,20 +31,20 @@
       </div>
     </div>
 
-    <div class="picture"></div>
+    <div class="picture" id="propImage"></div>
 
     <div class="row">
       <div class="column">1</div>
       <div class="main-column">
-        <i class="fa-solid fa-arrow-left"></i>
+        <i class="fa-solid fa-arrow-left" onclick="moveBack()"></i>
         <div class="titleAndPrice">
-          <div class="propTitle">Richmond St.</div>
-          <div class="propPrice">450,000</div>
+          <div class="propTitle" id="propTitle">Property Name Here</div>
+          <div class="propPrice" id="propPrice">Price Here</div>
         </div>
 
         <div class="locAndDays">
-          <div class="location">Toronto</div>
-          <div class="days">400 Days</div>
+          <div class="location" id="propLocation">Location Here</div>
+          <div class="days" id="propDays">___ Days</div>
         </div>
 
         <div class="typeAndTime">
@@ -54,16 +56,15 @@
           </div>
         </div>
 
-        <div class="specs">
-          <i class="fa-solid fa-bed"></i>
-          3 Beds&nbsp; &nbsp;
-          <i class="fa-solid fa-bath"></i>
-          3 Bath&nbsp; &nbsp;
-          <i class="fa-solid fa-chart-area"></i>
-          1500 sq. Feet&nbsp; &nbsp;
-
-          <i class="fa-solid fa-car"></i>
-          1
+        <div class="specs" id="propSpecs">
+            <i class="fa-solid fa-bed"></i>
+            
+            <i class="fa-solid fa-bath"></i>
+           
+            <i class="fa-solid fa-chart-area"></i>
+         
+            <i class="fa-solid fa-car"></i>
+           
         </div>
 
         <div class="details">
@@ -91,33 +92,33 @@
               <table class="factsTable">
                 <tr>
                   <td class="tdKey">Type</td>
-                  <td class="tdValue">Villa</td>
-                  <td class="tdKey">Levels</td>
-                  <td class="tdValue">2 Storey</td>
+                  <td class="tdValue" id="propType">Type</td>
+                  <td class="tdKey" >Levels</td>
+                  <td class="tdValue" id="propStories">Storeys</td>
                 </tr>
                 <tr>
                   <td class="tdKey">Size</td>
-                  <td class="tdValue">1500 Sqft</td>
+                  <td class="tdValue" id="propAreaTable">Area</td>
                   <td class="tdKey">Garage</td>
-                  <td class="tdValue">Basement</td>
+                  <td class="tdValue" id="propGarage">Garage</td>
                 </tr>
                 <tr>
                   <td class="tdKey">Maintenance Fee</td>
-                  <td class="tdValue">$1600</td>
+                  <td class="tdValue" id="propMaintenance">Maintenance Fee</td>
                   <td class="tdKey">Taxes</td>
-                  <td class="tdValue">$3200</td>
+                  <td class="tdValue" id="propTaxes">Taxes</td>
                 </tr>
                 <tr>
                   <td class="tdKey">Style</td>
-                  <td class="tdValue">Villa</td>
+                  <td class="tdValue" id="propStyle">Style</td>
                   <td class="tdKey">Approx. Age</td>
-                  <td class="tdValue">0-5 Years</td>
+                  <td class="tdValue" id="propAge">Age</td>
                 </tr>
                 <tr>
                   <td class="tdKey">Days Active</td>
-                  <td class="tdValue">-401</td>
+                  <td class="tdValue" id="propDaysTable">Days</td>
                   <td class="tdKey">Status</td>
-                  <td class="tdValue">For Sale</td>
+                  <td class="tdValue" id="propLabel">Label</td>
                 </tr>
               </table>
             </div>
@@ -128,17 +129,98 @@
             To get an accurate estimate please
           </div>
         </div>
+
+        <div class="estimates">
+            <div class="description">
+              <h5>Home Estimate Hintpraisal®</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing.<bold> $1,131,531</bold>
+                <ul class="list">
+                    <li class="ls-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, maxime!</li>
+                    <li class="ls-item">Enim eveniet quam quo temporibus molestiae rem quasi vel similique?</li>
+                    <li class="ls-item">Modi dolor quasi sed nisi excepturi, nulla reprehenderit corrupti consequatur.</li>
+                </ul>
+              </p>
+            </div>
+  
+
+            <div class="cautionDetails">
+              The estimated sale price does not take into account many variables
+              such as recent renovations, type of appliances, school district etc.
+              To get an accurate estimate please
+            </div>
+          </div>
+
+          <div class="estimates">
+            <div class="description">
+              <h5>Lorem, ipsum dolor©</h5>
+              <p>
+                Proident cupidatat fugiat dolor magna aliquip amet adipisicing consectetur nisi laborum. Eu fugiat pariatur et incididunt minim dolore occaecat tempor. Nisi reprehenderit labore magna consequat laboris do amet commodo aliquip ullamco in. Ullamco sit qui ad veniam consequat amet sunt nisi laboris. Veniam est aliqua velit id cupidatat ex proident esse culpa ad sint nostrud. Incididunt incididunt laboris anim et amet aliqua eu enim adipisicing amet quis esse.
+                <br>
+                <br>
+                Velit ad ullamco cillum culpa voluptate magna cupidatat. Magna occaecat id aliqua pariatur sit do fugiat adipisicing amet commodo Lorem eiusmod. Sit ipsum elit sit nulla Lorem eiusmod. Exercitation velit culpa cupidatat nisi sit aliqua in adipisicing.
+                <br><br>
+                Occaecat cupidatat eu ad velit quis quis voluptate consequat in id id esse. Mollit irure sint exercitation mollit. Ea cillum minim exercitation dolor aliqua non enim.
+                <br><br>
+                Labore ea minim ut irure aute cillum minim veniam. Voluptate dolor laborum sint eiusmod excepteur irure. Dolor velit consequat esse id incididunt ut.
+            </p>
+            </div>
+  
+
+            <div class="cautionDetails">
+              The estimated sale price does not take into account many variables
+              such as recent renovations, type of appliances, school district etc.
+              To get an accurate estimate please
+            </div>
+          </div>
       </div>
       <div class="column">
         <div class="inputCard">
-          Like What you see? Complete the form and we'll be in touch.<br />
+          <h4>Like What you see?</h4> 
+          <p>Complete the form and we'll be in touch.<br /></p>
           <input class="inputSideBar" placeholder="First Name" /><br />
           <input class="inputSideBar" placeholder="Last Name" /><br />
           <input class="inputSideBar" placeholder="Email" /><br />
           <input class="inputSideBar" placeholder="Phone Number" /><br />
-          <input class="apply" type="button" value="Apply Filters" />
+
+          <div class="comment" id="comment" onclick="addCommentBox()">
+            + Add a Comment
+          </div>
+          <input type="checkbox" class="inputCheckBox"> I want to view this property</in>
+       
+          <input class="apply" type="button" value="Take a Tour" onclick="formSubmitted()" />
+           
+            <!-- The actual snackbar -->
+            <div id="snackbar">
+                <i class="fa-solid fa-circle-check"></i>
+                Form Submitted
+            </div>
         </div>
       </div>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="column">
+
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, voluptatum.
+<br>
+    Terms of us | Privacy Policy |  Careers |    About Us
+            </div>
+        <div class="main-column">
+
+            House Hint © 2007–2022. The trademarks®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.
+        </div>
+        <div class="column-last">
+            Stay Connected
+            <br>
+            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-comment"></i>
+            <br>
+            0-000-111-22222   info@househint.com
+        </div>
+        </div>
+        
     </div>
   </body>
 </html>

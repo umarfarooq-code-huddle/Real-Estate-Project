@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Raleway';
+    box-sizing: border-box;
 }
 
   /* Style the links inside the navigation bar */
@@ -46,7 +47,7 @@
 
 
 .picture{
-        background-image: url("../images/prop1_img_1.jpeg");
+        background-image: url("img here");
         height: 21.9rem;
         background-position: center;
         background-size: cover;
@@ -80,6 +81,12 @@
     padding-left: 10px;
     font-size: 1.5rem;
 }
+
+.propTitle:hover{
+    text-decoration: underline;
+}
+
+
 
 
 .propPrice {
@@ -198,17 +205,6 @@
     overflow-x: auto;
 }
 
-.inputSideBar{
-    margin: 5px;
-    padding: 10px;
-    width: 100%;
-    background-color: white;
-    border: 1px solid gray;
-    color: black;
-    text-align: center;
-
-}
-
 .inputCard {
     padding-top: 30px;
     padding-left: 20px;
@@ -217,13 +213,45 @@
     margin: 30px;
 
     box-shadow: 1px 5px 8px 5px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        border-radius: 8px;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.inputCard h4,p {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+
+.inputSideBar{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgb(171, 170, 170);
+    color: black;
+    text-align: left;
+
+}
+
+.inputSideBarComments{
+   
+    width: 100%;
+  
+    height: 3rem;
+
 }
 
 .apply{
     margin: 5px;
     padding: 10px;
+    margin-bottom: 30px;
     width: 100%;
     background-color: #29aae3;
     border: 1px solid #29aae3;
@@ -235,10 +263,154 @@
  .apply:hover{
     margin: 5px;
     padding: 10px;
-
+    margin-bottom: 30px;
     background-color: white;
     border: 1px solid #29aae3;
     color: #29aae3;
     text-align: center;
     transition: 1s;
 }
+
+.comment{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    color: gray;
+    text-align: left;
+    padding-left: 5px;
+
+}
+
+
+.inputCheckBox{
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+.estimates{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid gray;
+ }
+
+ .estimates .description h5{
+    font-size: 1.375rem;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+ }
+
+ .list{
+    margin: 30px;
+    
+ }
+
+ .ls-item {
+    padding: 10px;
+ }
+
+ 
+.description {
+    padding-top: 3px;
+}
+
+.keyFacts {
+    padding-top: 30px;
+}
+
+
+
+
+.footer {
+
+    padding-top: 8rem;
+    margin-top: 100px;
+    height: 15rem;
+    background-color: #29aae3;
+    border-top-left-radius: 40rem;
+}
+
+.footer .column {
+    text-align: left;
+    margin-left: 10rem;
+    width: 30%;
+    float: left;
+    font-size: 0.8rem;
+    color: white;
+ 
+}
+
+.footer .main-column {
+  
+    width: 30%;
+    float:left;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+
+}
+
+
+.footer .column-last {
+   text-align: right;
+   color: white;
+   display: inline-block;
+   width: 25%;
+ 
+ 
+}
+
+
+ /* The snackbar - position it at the bottom and in the middle of the screen */
+ #snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #29aae3; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  } 

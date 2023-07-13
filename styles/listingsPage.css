@@ -222,3 +222,44 @@ hr{
 }
 
 
+
+
+
+.footer {
+
+    padding-top: 8rem;
+    margin-top: 100px;
+    height: 15rem;
+    background-color: #29aae3;
+    border-top-left-radius: 40rem;
+}
+
+.footer .column {
+    text-align: left;
+    margin-left: 10rem;
+    width: 30%;
+    float: left;
+    font-size: 0.8rem;
+    color: white;
+ 
+}
+
+.footer .main-column {
+  
+    width: 30%;
+    float:left;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+
+}
+
+
+.footer .column-last {
+   text-align: right;
+   color: white;
+   display: inline-block;
+   width: 25%;
+ 
+ 
+}
