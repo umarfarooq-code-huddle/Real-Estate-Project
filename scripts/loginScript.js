@@ -1,3 +1,7 @@
+/**
+ * The function "loadLoginForm" creates a login form with input fields for username and password, and a
+ * login button, when a proceed button is clicked on frontend
+ */
 
 function loadLoginForm(){
     var loginBox = document.getElementById("login-box")
@@ -18,6 +22,14 @@ function loadLoginForm(){
     `
 }
 
+
+
+
+/**
+ * The login function checks if the entered username and password match a specific value, and if so,
+ * sets a flag in local storage and redirects the user to the main page; otherwise, it displays an
+ * alert indicating wrong credentials.
+ */
 async function login(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;

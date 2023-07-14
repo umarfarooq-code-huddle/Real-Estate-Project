@@ -106,6 +106,15 @@ hr{
  
 }
 
+.numImages {
+    background-color: #29aae3;
+    width: 1rem;
+    border-radius: 100%;
+    color: white;
+    position: relative;
+    left: 50%;
+}
+
 .header{
     height: 25rem;
     text-align: center;

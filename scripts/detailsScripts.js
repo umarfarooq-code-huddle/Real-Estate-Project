@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", showDetails);
 
+/**
+ * The function `showDetails()` retrieves property details from a URL query string and displays them on
+ * a webpage.
+ */
 function showDetails() {
   const queryString = window.location.search;
-  console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
   var id = +urlParams.get("propID");
-  console.log(id - 1);
 
+  /* The `var properties` is an array of objects that stores property details.*/
   var properties = [
     {
       imgSrc: "url(../images/prop1_img_1.jpeg)",

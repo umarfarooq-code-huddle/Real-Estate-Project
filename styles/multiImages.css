@@ -74,3 +74,41 @@
   .card:hover .btnRight:hover {
     background-color: black;
   } 
+
+
+
+  /* Style the button and place it in the middle of the container/image */
+  .card .forSaleTag {
+    height: 1rem;
+    width: 3rem;
+    position: relative;
+    top: 55%;
+    left: 5%;
+    background-color: green;
+    font-size: 0.5rem;
+    color: white;
+     padding-left: 10px; 
+     padding-right: 10px; 
+     padding-top: 10px; 
+     padding-bottom: 5px; 
+
+     border-radius: 20px; 
+  }
+  
+
+  .card:hover .forSaleTag {
+    width: 3rem;
+    position: fixed;
+    top: 40%;
+    left: 5%;
+    background-color: green;
+    font-size: 0.5rem;
+    color: white;
+    padding-left: 10px; 
+     padding-right: 10px; 
+     padding-top: 10px; 
+     padding-bottom: 5px; 
+     border-radius: 20px; 
+  }
+ 
+ 
