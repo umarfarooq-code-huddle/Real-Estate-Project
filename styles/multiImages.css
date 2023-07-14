@@ -1,0 +1,76 @@
+
+  /* Style the button and place it in the middle of the container/image */
+  .card .btnLeft {
+    width: 1rem;
+    position: relative;
+    top: 40%;
+    opacity: 0;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    cursor: pointer;
+    border-radius: 100%;
+    z-index: 10;
+  }
+  
+ 
+  .card:hover .btnLeft {
+    width: 1rem;
+    position: relative;
+    top: 40%;
+    float: left;
+    opacity: 100;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+   
+
+    cursor: pointer;
+    border-radius: 100%;
+  }
+
+  .card:hover .btnLeft:hover {
+    background-color: black;
+  } 
+
+
+
+
+  .card .btnRight {
+    width: 1rem;
+    position: relative;
+    top: 40%;
+    opacity: 0;
+    float: right;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    cursor: pointer;
+    border-radius: 100%;
+  }
+  
+ 
+  .card:hover .btnRight {
+    width: 1rem;
+    position: relative;
+    top: 40%;
+    opacity: 100;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+   
+    cursor: pointer;
+    border-radius: 100%;
+  }
+
+  .card:hover .btnRight:hover {
+    background-color: black;
+  } 

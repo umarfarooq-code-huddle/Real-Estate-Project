@@ -4,7 +4,7 @@
 @media only screen and (min-width:800px){
     .card {
         box-shadow: 1px 5px 8px 5px rgba(0, 0, 0, 0.3);
-        width: 23.8%;
+        width: 23.5%;
         text-align: center;
         margin: 10px;
         border-radius: 8px;
@@ -32,7 +32,10 @@
 
 }
 
-.card img{
+.card .img{
+    background-image: url("../images/prop1_img_1.jpeg");
+    background-position: center;
+        background-size: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 100%;
@@ -263,3 +266,5 @@ hr{
  
  
 }
+
+
