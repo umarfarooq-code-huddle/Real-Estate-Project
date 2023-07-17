@@ -4,128 +4,80 @@ document.addEventListener("DOMContentLoaded", showDetails);
  * The function `showDetails()` retrieves property details from a URL query string and displays them on
  * a webpage.
  */
-function showDetails() {
+async function showDetails() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  var id = +urlParams.get("propID");
+  var id = urlParams.get("propID");
 
-  /* The `var properties` is an array of objects that stores property details.*/
-  var properties = [
-    {
-      imgSrc: "url(../images/prop1_img_1.jpeg)",
-      name: "Richmond St.",
-      location: "Toronto",
-      price: "$450,000",
-      days: -401,
-      beds: 3,
-      baths: 3,
-      area: 1500,
-      carParkingSpace: 1,
-      type: "Villa",
-      maintenanceFee: "$1600",
-      stories: "2 Storey",
-      garage: "Basement",
-      taxes: "$3200",
-      age: "0-5 Years",
-      label: "For Sale",
-    },
-    {
-      imgSrc: "url(../images/prop2_img_1.jpeg)",
-      name: "Front St. E.",
-      price: "550,000",
-      location: "Toronto",
-      type: "Flat",
-      days: 407,
-      beds: 7,
-      baths: 7,
-      area: 600,
-      maintenanceFee: "$3000",
-      stories: "5 Storey",
-      garage: "Ground Floor",
-      taxes: "$6000",
-      age: "0-5 Years",
-      label: "For Sale",
-      carParkingSpace: 1,
-    },
-    {
-      imgSrc: "url(../images/prop3_img_1.jpeg)",
-      name: "Casa Loma",
-      price: "2,250,000",
-      location: "Casa Loma, Austin",
-      city: "Toronto",
-      days: 407,
-      beds: 8,
-      baths: 8,
-      area: 600,
-      carParkingSpace: 1,
-      type: "Apartment",
-      maintenanceFee: "$3000",
-      stories: "5 Storey",
-      garage: "Ground Floor",
-      Taxes: "$15000",
-      age: "3-4 Years",
-      label: "For Sale",
-    },
-    {
-      propId: 4,
-      imgSrc: "url(../images/prop4_img_1.jpeg)",
-      name: "Toronto Islands",
-      price: "4,260,000",
-      location: "Casa Loma, Austin",
-      city: "Toronto",
-      days: 407,
-      beds: 3,
-      baths: 3,
-      area: 600,
-      carParkingSpace: 1,
-      type: "Villa",
-      maintenanceFee: "$500",
-      stories: "2 Storey",
-      garage: "Ground Floor",
-      Taxes: "$500",
-      age: "0-5 Years",
-      label: "For Sale",
-    },
-  ];
 
-  var i = id - 1;
+  var property = await fetch('http://localhost:3000/listings/listingByID?id='+id,{
+    method:"GET",
+  }).then((res)=>{
+    return res.json()
+  });
+  console.log(property)
 
-  document.getElementById("propTitle").innerHTML = properties[i].name;
-  document.getElementById("propPrice").innerHTML = properties[i].price;
-  document.getElementById("propLocation").innerHTML = properties[i].location;
-  document.getElementById("propDays").innerHTML = properties[i].days + "Days";
 
-  document.getElementById("propType").innerHTML = properties[i].type;
-  document.getElementById("propStories").innerHTML = properties[i].stories;
-  document.getElementById("propAreaTable").innerHTML = properties[i].area;
+
+
+  /* The code block  is updating the HTML content of various elements on the webpage with
+  property details from the `properties` array. */
+  document.getElementById("propTitle").innerHTML = property.name;
+  document.getElementById("propPrice").innerHTML = property.price;
+  document.getElementById("propLocation").innerHTML = property.location;
+  document.getElementById("propDays").innerHTML = property.days + "Days";
+
+  document.getElementById("propType").innerHTML = property.type;
+  document.getElementById("propStories").innerHTML = property.stories;
+  document.getElementById("propAreaTable").innerHTML = property.area;
   document.getElementById("propMaintenance").innerHTML =
-    properties[i].maintenanceFee;
-  document.getElementById("propStyle").innerHTML = properties[i].type;
-  document.getElementById("propDaysTable").innerHTML = properties[i].days;
-  document.getElementById("propGarage").innerHTML = properties[i].garage;
-  document.getElementById("propTaxes").innerHTML = properties[i].taxes;
-  document.getElementById("propAge").innerHTML = properties[i].age;
-  document.getElementById("propLabel").innerHTML = properties[i].label;
+  property.maintenanceFee;
+  document.getElementById("propStyle").innerHTML = property.type;
+  document.getElementById("propDaysTable").innerHTML = property.days;
+  document.getElementById("propGarage").innerHTML = property.garage;
+  document.getElementById("propTaxes").innerHTML = property.taxes;
+  document.getElementById("propAge").innerHTML = property.age;
+  document.getElementById("propLabel").innerHTML = property.label;
 
   document.getElementById("propImage").style.backgroundImage =
-    properties[i].imgSrc;
+    property.imgSrc;
+
+
+  
   document.getElementById("propSpecs").innerHTML = `
               <i class="fa-solid fa-bed"></i>
-                ${properties[i].beds} Beds&nbsp; &nbsp;
+                ${property.beds} Beds&nbsp; &nbsp;
                 <i class="fa-solid fa-bath"></i>
-                ${properties[i].baths} Bath&nbsp; &nbsp;
+                ${property.baths} Bath&nbsp; &nbsp;
                 <i class="fa-solid fa-chart-area"></i>
-                ${properties[i].area} sq. Feet&nbsp; &nbsp;
+                ${property.area} sq. Feet&nbsp; &nbsp;
                 <i class="fa-solid fa-car"></i>
-                ${properties[i].carParkingSpace}`;
+                ${property.carParkingSpace}`;
 }
 
+
+
+
+
+
+
+/**
+ * The function "addCommentBox" replaces an element with the id "comment" with a textarea element that
+ * has a placeholder text.
+ */
 function addCommentBox() {
   var comments = document.getElementById("comment");
-
   comments.outerHTML = `<textarea id='tarea' class="inputSideBar" placeholder="When you would like to see this property? (optional)"></textarea>`;
 }
 
+
+
+
+
+/**
+ * The function "formSubmitted" adds a class to a specified element, displays it for 3 seconds, and
+ * then removes the class.
+ */
 function formSubmitted() {
   var x = document.getElementById("snackbar");
 
@@ -138,6 +90,13 @@ function formSubmitted() {
   }, 3000);
 }
 
+
+
+
+
+/**
+ * The moveBack function redirects the user to the mainpage.html.
+ */
 function moveBack() {
   window.location = "/mainpage.html";
 }

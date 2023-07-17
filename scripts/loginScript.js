@@ -44,3 +44,21 @@ async function login(){
         alert("Wrong Credentials")
     }
 }
+
+
+document.addEventListener("DOMContentLoaded", loadingPage);
+
+function loadingPage(){
+    var mainDiv = document.getElementById("main");
+    mainDiv.innerHTML = `<img class="center" src="images/loader-2.gif">`
+
+    setTimeout(()=>{
+        mainDiv.outerHTML = `<div class="bg-image"></div>
+        <div class="bg-text">
+          <h1>Welcome To Real Estate Web Site</h1>
+          <p>Here you can find your dream property</p>
+          <div id="login-box">
+          <div onclick="loadLoginForm()" class="button-on-landing-page" id="btn-proceed">Get Started</div>
+        </div> `
+    },4000)
+}

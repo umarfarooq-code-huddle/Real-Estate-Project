@@ -1,7 +1,13 @@
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+/* The `@media` rule in CSS is used to apply different styles based on the characteristics of the
+device or screen size. In this case, the `@media` rule is targeting screens with a minimum width of
+800 pixels. */
 @media only screen and (min-width:800px){
+   /* The `.card` CSS class is defining the styles for a card element. */
     .card {
         box-shadow: 1px 5px 8px 5px rgba(0, 0, 0, 0.3);
         width: 23.5%;
@@ -115,6 +121,7 @@ hr{
     left: 50%;
 }
 
+
 .header{
     height: 25rem;
     text-align: center;
@@ -123,8 +130,9 @@ hr{
 
 
 
+  /* The code  is styling the links inside a navigation bar. */
   
-  /* Style the links inside the navigation bar */
+
   .topnav a {
     float: right;
     color: #000000;
@@ -134,7 +142,7 @@ hr{
     font-size: 1rem;
   }
   
-  /* Change the color of links on hover */
+
   .topnav a:hover {
 
     color: black;
@@ -142,15 +150,15 @@ hr{
   }
 
  
-  /* Add a color to the active/current link */
+ 
   .topnav a.active {
 
     color: blue;
     border-bottom: 1px solid blue;
   }
 
-    /* Style the links inside the navigation bar */
-    .topnav .name {
+  
+  .topnav .name {
         float: left;
         color: #000000;
         text-align: center;
@@ -182,7 +190,7 @@ hr{
     margin: 5px;
     padding: 10px;
     width: 8rem;
-    background-color: #29aae3;
+    background-color: +#29aae3;
     border: 1px solid #29aae3;
     color: white;
     text-align: center;
@@ -275,5 +283,7 @@ hr{
  
  
 }
+
+
 
 

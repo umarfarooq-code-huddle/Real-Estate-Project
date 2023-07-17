@@ -1,109 +1,19 @@
 document.addEventListener("DOMContentLoaded", addAllListings);
-
+var listings;
 /**
  * The function `addAllListings` populates a list of property listings on a webpage using data from an
  * array of properties.
  */
-function addAllListings() {
+async function addAllListings() {
   var listings = document.getElementById("listings");
   listings.innerHTML = "";
 
   /* The above code is defining an array called "properties" that contains objects representing
   different properties for sale. */
-  var properties = [
-    {
-      propId: 1,
-      imgSrc: "url(../images/prop1_img_1.jpeg)",
-      name: "Richmond St.",
-      price: "450,000",
-      location: "Undefined",
-      city: "Toronto",
-      days: 400,
-      beds: 3,
-      baths: 3,
-      area: 1500,
-      images: 3,
-      carParkingSpace: 1,
-      type: "Villa",
-      maintenanceFee: "$1600",
-      stories: "2 Storey",
-      garage: "Basement",
-      taxes: "$3200",
-      age: "0-5 Years",
-      label: "For Sale",
-      priceRange: "7",
-    },
-
-    {
-      propId: 2,
-      imgSrc: "url(../images/prop2_img_1.jpeg)",
-      name: "Front St. E.",
-      price: "550,000",
-      location: "Undefined",
-      city: "Toronto",
-      days: 407,
-      beds: 7,
-      baths: 7,
-      area: 600,
-      type: "Flat",
-      images: 3,
-      maintenanceFee: "$3000",
-      stories: "5 Storey",
-      garage: "Ground Floor",
-      taxes: "$6000",
-      age: "0-5 Years",
-      label: "For Sale",
-      carParkingSpace: 1,
-      priceRange: "7",
-    },
-
-    {
-      propId: 3,
-      imgSrc: "url(../images/prop3_img_1.jpeg)",
-      name: "Casa Loma",
-      price: "2,250,000",
-      location: "Casa Loma, Austin",
-      city: "Toronto",
-      days: 407,
-      beds: 8,
-      baths: 8,
-      area: 600,
-      images: 2,
-      carParkingSpace: 1,
-      type: "Apartment",
-      maintenanceFee: "$3000",
-      stories: "5 Storey",
-      garage: "Ground Floor",
-      Taxes: "$15000",
-      age: "3-4 Years",
-      label: "For Sale",
-      priceRange: "7",
-    },
-
-    {
-      propId: 4,
-      imgSrc: "url(../images/prop4_img_1.jpeg)",
-      name: "Toronto Islands",
-      price: "2,250,000",
-      location: "Casa Loma, Austin",
-      city: "Toronto",
-      days: 407,
-      beds: 3,
-      baths: 3,
-      area: 600,
-      images: 1,
-      carParkingSpace: 1,
-      type: "Villa",
-      maintenanceFee: "$500",
-      stories: "2 Storey",
-      garage: "Ground Floor",
-      Taxes: "$500",
-      age: "0-5 Years",
-      label: "For Sale",
-      priceRange: "7",
-    },
-  ];
-
+  var properties = await fetch('http://localhost:3000/listings/allListings').then((res)=>{
+    return res.json()
+  });
+  console.log(properties)
   var i = 1;
 
   /* The code is generating HTML elements dynamically based on the properties array. It iterates
@@ -245,7 +155,7 @@ function nextImage(i, e, pID, images) {
  * The `applyFilters` function filters a list of properties based on user-selected filters and displays
  * the filtered properties on the webpage.
  */
-function applyFilters() {
+async function applyFilters() {
   console.clear();
 
   var houseType = document.getElementById("houseType").value;
@@ -256,112 +166,22 @@ function applyFilters() {
   var listings = document.getElementById("listings");
   listings.innerHTML = "";
 
-  var properties = [
-    {
-      propId: 1,
-      imgSrc: "url(../images/prop1_img_1.jpeg)",
-      name: "Richmond St.",
-      price: "450,000",
-      location: "Undefined",
-      city: "Toronto",
-      days: 400,
-      beds: 3,
-      baths: 3,
-      area: 1500,
-      images: 3,
-      carParkingSpace: 1,
-      type: "Villa",
-      maintenanceFee: "$1600",
-      stories: "2 Storey",
-      garage: "Basement",
-      taxes: "$3200",
-      age: "0-5 Years",
-      label: "For Sale",
-      priceRange: "7",
-    },
+  var bodyVar = {houseType,listingType,beds,priceRange,location};
+  console.log(bodyVar)
 
-    {
-      propId: 2,
-      imgSrc: "url(../images/prop2_img_1.jpeg)",
-      name: "Front St. E.",
-      price: "550,000",
-      location: "Undefined",
-      city: "Toronto",
-      days: 407,
-      beds: 7,
-      baths: 7,
-      area: 600,
-      type: "Flat",
-      images: 3,
-      maintenanceFee: "$3000",
-      stories: "5 Storey",
-      garage: "Ground Floor",
-      taxes: "$6000",
-      age: "0-5 Years",
-      label: "For Sale",
-      carParkingSpace: 1,
-      priceRange: "7",
-    },
-
-    {
-      propId: 3,
-      imgSrc: "url(../images/prop3_img_1.jpeg)",
-      name: "Casa Loma",
-      price: "2,250,000",
-      location: "Casa Loma, Austin",
-      city: "Toronto",
-      days: 407,
-      beds: 8,
-      baths: 8,
-      area: 600,
-      images: 2,
-      carParkingSpace: 1,
-      type: "Apartment",
-      maintenanceFee: "$3000",
-      stories: "5 Storey",
-      garage: "Ground Floor",
-      Taxes: "$15000",
-      age: "3-4 Years",
-      label: "For Sale",
-      priceRange: "7",
-    },
-
-    {
-      propId: 4,
-      imgSrc: "url(../images/prop4_img_1.jpeg)",
-      name: "Toronto Islands",
-      price: "2,250,000",
-      location: "Casa Loma, Austin",
-      city: "Toronto",
-      days: 407,
-      beds: 3,
-      baths: 3,
-      area: 600,
-      images: 1,
-      carParkingSpace: 1,
-      type: "Villa",
-      maintenanceFee: "$500",
-      stories: "2 Storey",
-      garage: "Ground Floor",
-      Taxes: "$500",
-      age: "0-5 Years",
-      label: "For Sale",
-      priceRange: "7",
-    },
-  ];
-
- /* The code is filtering an array of properties based on certain conditions. It uses the
- `filter` method to iterate over each property in the `properties` array and checks if it meets the
- specified conditions. */
-  properties = properties.filter((property) => {
-    return (
-      (beds == "default" ? true : property.beds == beds) &&
-      (listingType == "default" ? true : listingType == property.label) &&
-      (priceRange == "default" ? true : priceRange == property.priceRange) &&
-      (houseType == "default" ? true : houseType == property.type) &&
-      (property.location.includes(location) || property.city.includes(location))
-    );
+  var properties = await fetch('http://localhost:3000/listings/allListingsWithFilter',{
+    method:"POST",
+    headers:{
+      'Accept':'application/json',
+      'Content-Type':'application/json'
+    }
+    , body:JSON.stringify(bodyVar)
+  }).then((res)=>{
+    return res.json()
   });
+  
+    
+
 
   var i = 1;
   properties.forEach((property) => {
