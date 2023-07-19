@@ -10,5 +10,5 @@ Hello, Welcome to my Real Estate Project. I have created this simple and elegant
 ## Details Page
 ![Details Page](./Screenshots/detailsPage.png)
 
-## Landing Page
-![Landing Page](/Screenshots/landingPage.png)
+## Custom Toasts
+![Toasts](/Screenshots/Toasts.png)
