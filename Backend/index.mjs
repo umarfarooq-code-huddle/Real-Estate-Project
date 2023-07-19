@@ -5,18 +5,27 @@ import users from './routes/users.route.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+import path from 'path';
+import fs from 'fs';
+
+
+
 const uri = `mongodb+srv://umarfarooq:${process.env.PASSWORD}@realestate.tgyqwss.mongodb.net/RealEstate?retryWrites=true&w=majority`
 mongoose.connect(uri);
+
 const app = express();
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('/public'));
+app.use('/routes/uploads', express.static('uploads'));
+
 app.use('/listings',listings);
 app.use('/users',users);
 
-function custom(req,res){
-    console.log(req)
-}
+
+
+
 
 app.use((error,req,res,next)=>{
     console.error(error)
@@ -28,6 +37,7 @@ app.use((error,req,res,next)=>{
 app.get('/',(req,res)=>{
     return res.send('Welcome to The HomePage');
 })
+
 
 
 app.listen(process.env.PORT , ()=>{
